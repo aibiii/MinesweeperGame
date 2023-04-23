@@ -41,7 +41,7 @@ public class Board extends JPanel{
     
     // all buttons are created
     private void createButtons() {
-        ImageIcon defaultCell = new ImageIcon("src/main/java/image/facingDown.png"); // setting an image on buttons
+        ImageIcon defaultCell = new ImageIcon("image/facingDown.png"); // setting an image on buttons
         
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -87,14 +87,14 @@ public class Board extends JPanel{
         else {
             int minesCount = surroundingMines(row, column);
             if (minesCount == 0) {
-                ImageIcon image0 = new ImageIcon("src/main/java/image/0.png");
+                ImageIcon image0 = new ImageIcon("image/0.png");
                 Image img = image0.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                 ImageIcon scaledIcon = new ImageIcon(img);
                 button.setIcon(scaledIcon);
                 openedCells++;
             } 
             else {
-                ImageIcon image = new ImageIcon("src/main/java/image/" + minesCount + ".png"); //sets image according to bomb count
+                ImageIcon image = new ImageIcon("image/" + minesCount + ".png"); //sets image according to bomb count
                 Image img = image.getImage();
                 Image scaledImg = img.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                 button.setIcon(new ImageIcon(scaledImg));
@@ -127,7 +127,7 @@ public class Board extends JPanel{
             for (int j = 0; j < columns; j++) {
                 JButton button = (JButton) getComponent(i * columns + j); // returns the button at the (i,j) position in the grid layout
                 if (board[i][j] == -1) {
-                    ImageIcon bomb = new ImageIcon("src/main/java/image/bomb.png");
+                    ImageIcon bomb = new ImageIcon("image/bomb.png");
                     Image img = bomb.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                     ImageIcon scaledIcon = new ImageIcon(img);
                     button.setIcon(scaledIcon);
